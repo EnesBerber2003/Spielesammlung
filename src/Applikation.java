@@ -1,30 +1,38 @@
+import javax.swing.*;
+import java.awt.*;
 import java.util.Scanner;
+import java.util.List;
 
 public class Applikation {
     // Instanzvariablen
     private final Scanner scanner;
+    private final List<Class<? extends Game>> games;
 
     // Konstruktor
     public Applikation() {
         scanner = new Scanner(System.in);
+        games = List.of(TicTacToe.class, RockPaperScissors.class, UNO.class, HangmanArcade.class);
     }
 
     // Methoden
+    public void chooseAGame() {
+        JFrame frame = new JFrame("Wählen Sie bitte ein Spiel aus.");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new GridLayout(games.size(), 1));
+        frame.setMinimumSize(new Dimension(340, games.size() * 50)); // Setzt die Größe beim aufploppen fest.
+        frame.setLocationRelativeTo(null);
+        for (Class<? extends Game> gameClass : games) {
+            JButton button = new JButton(gameClass.getSimpleName());
+            button.addActionListener(e -> {
+                frame.dispose(); // Schließt das Fenster
+                gameStart(gameClass);
+            });
+            frame.add(button);
+        }
 
-    public void playTicTacToe() {
-        gameStart(TicTacToe.class);
-    }
-
-    public void playRockPaperScissors() {
-        gameStart(RockPaperScissors.class);
-    }
-
-    public void playUNO() {
-        gameStart(UNO.class);
-    }
-
-    public void playHangmanArcade() {
-        gameStart(HangmanArcade.class);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
 
     private void gameStart(Class<? extends Game> gameClass) {
