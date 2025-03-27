@@ -19,40 +19,18 @@ public class TicTacToe extends Game {
         for (int i = 0; i < 9; i++) { // Das Spiel besteht aus 9 Feldern.
             cells.add(String.valueOf(i + 1));
         }
-        try {
-            int milliseconds = 50;
-            for (char c : "Willkommen beim Spiel TicTacToe!".toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(milliseconds);
-            }
-            System.out.println();
-            for (char c : "Der erste Spieler der 3 Punkte hat, gewinnt das Spiel.".toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(milliseconds);
-            }
-            System.out.println();
-            for (char c : "Möchten Sie SchereSteinPapier spielen, um den Startspieler zu bestimmen? ja/nein".toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(milliseconds);
-            }
-            System.out.println();
-            for (char c : "Wenn nicht dann wird der Startspieler zufällig bestimmt.".toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(milliseconds);
-            }
-        } catch (InterruptedException e) {
-            System.err.println(e.getMessage());
-        }
-        System.out.println();
-        System.out.println();
+        System.out.println("Willkommen beim Spiel TicTacToe!");
+        System.out.println("Der erste Spieler der 3 Punkte hat, gewinnt das Spiel.");
+        System.out.println("Möchten Sie SchereSteinPapier spielen, um den Startspieler zu bestimmen? ja/nein");
+        System.out.println("Wenn nicht dann wird der Startspieler zufällig bestimmt.");
         scanner = new Scanner(System.in);
         Random random = new Random();
-        RockPaperScissors roPaSciGame = new RockPaperScissors();
         String answer = "";
         while (!answer.equals("ja") && !answer.equals("nein")) {
             answer = scanner.nextLine();
             switch (answer) {
                 case "ja" -> {
+                    RockPaperScissors roPaSciGame = new RockPaperScissors();
                     roPaSciGame.setPlayerCount(2);
                     roPaSciGame.startGame();
                     setPlayerCount(2); // Tictactoe kann man nur mit 2 Spielern spielen.

@@ -38,56 +38,22 @@ public class RockPaperScissors extends Game {
         resetConsole = "\u001B[0m"; // Damit wird die Farbe auf der Konsole zurückgesetzt.
         scanner = new Scanner(System.in);
         random = new Random();
-        try {
-            int milliseconds = 50;
-            for (char c : "Willkommen beim Spiel SchereSteinPapier!".toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(milliseconds);
-            }
-            System.out.println();
-            for (char c : "Dieses SchereSteinPapier Spiel unterscheidet sich von dem üblichen".toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(milliseconds);
-            }
-            System.out.println();
-            for (char c : "Spiel, den wir in der Realität kennen.".toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(milliseconds);
-            }
-            System.out.println();
-            for (char c : "In diesem Spiel, spielt jeder Spieler gegen einen Bot.".toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(milliseconds);
-            }
-            System.out.println();
-            for (char c : "Man bekommt einen Punkt, wenn man den Bot besiegt.".toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(milliseconds);
-            }
-            System.out.println();
-            for (char c : "Der Spieler, der mindestens 5 Punkte erzielt und dabei einen ".toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(milliseconds);
-            }
-            System.out.println();
-            for (char c : "Vorsprung von mindestens 2 Punkten vor seinen Mitspielern hat, gewinnt das Spiel.".toCharArray()) {
-                System.out.print(c);
-                Thread.sleep(milliseconds);
-            }
-            System.out.println();
-            System.out.println();
-        } catch (InterruptedException e) {
-            System.err.println(e.getMessage());
-        }
-        enterPlayerCount(2,100);
-        namePlayers();
-        setCurrentPlayer(getPlayerNames().getFirst());
+        System.out.println("Willkommen beim Spiel SchereSteinPapier!");
+        System.out.println("Dieses SchereSteinPapier Spiel unterscheidet sich von dem üblichen");
+        System.out.println("Spiel, den wir in der Realität kennen.");
+        System.out.println("In diesem Spiel, spielt jeder Spieler gegen einen Bot.");
+        System.out.println("Man bekommt einen Punkt, wenn man den Bot besiegt.");
+        System.out.println("Der Spieler, der mindestens 5 Punkte erzielt und dabei einen ");
+        System.out.println("Vorsprung von mindestens 2 Punkten vor seinen Mitspielern hat, gewinnt das Spiel.");
     }
 
     // Methoden
 
 
     public void startGame() {
+        enterPlayerCount(2,100);
+        namePlayers();
+        setCurrentPlayer(getPlayerNames().getFirst());
         // Spiel startet hier.
         boolean gameInProgress = true;
         while (gameInProgress) {
