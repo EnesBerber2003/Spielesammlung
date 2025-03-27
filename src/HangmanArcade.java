@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class HangmanArcade extends Spiel {
+public class HangmanArcade extends Game {
     // Instanzvariablen
     private List<String> words;
     private String word;  // Das zu erratene Wort.

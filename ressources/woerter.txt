@@ -2435,7 +2435,7 @@ Sperrgebiet
 Speyer
 Spezialgebiet
 Spiegelbild
-Spiel
+Game
 Spielcasino
 Spielfeld
 Spielzeug
@@ -6373,7 +6373,7 @@ Antrittsrede
 Antwort
 Anwaltskanzlei
 Anweisung
-Anwendung
+Applikation
 Anwesenheit
 Anwohnerin
 Anzahl
